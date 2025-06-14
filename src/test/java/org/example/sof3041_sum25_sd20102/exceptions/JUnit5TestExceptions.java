@@ -12,6 +12,12 @@ public class JUnit5TestExceptions {
     @DisplayName("Exceptions test")
     void test() {
         String str = null;
+        //str.toUpperCase();
+        assertThrows(NullPointerException.class, () -> {
+            System.out.println("Check exception");
+            str.toUpperCase();
+        });
+
         assertThrows(NullPointerException.class, () -> str.length());
 
         Foo foo = new Foo();
